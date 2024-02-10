@@ -1,0 +1,32 @@
+# Example: Adding an item to a list
+my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list)  # Output: [1, 2, 3, 4]
+
+
+# Example: Removing an item from a list
+my_list = [1, 2, 3, 2]
+my_list.remove(2)
+print(my_list)  # Output: [1, 3, 2]
+
+
+# Example: Sorting a list
+my_list = [3, 1, 4, 1, 5, 9, 2]
+my_list.sort()
+print(my_list)  # Output: [1, 1, 2, 3, 4, 5, 9]
+
+
+# Example: Reversing a list
+my_list = [1, 2, 3]
+my_list.reverse()
+print(my_list)  # Output: [3, 2, 1]
+
+# Example: Using pop to remove an item
+my_list = [1, 2, 3]
+popped_item = my_list.pop()
+print(popped_item)  # Output: 3
+print(my_list)      # Output: [1, 2]
+
+# Example: Getting the length of a list
+my_list = [1, 2, 3]
+print(len(my_list))  # Output: 3
