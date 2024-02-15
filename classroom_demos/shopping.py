@@ -1,6 +1,7 @@
 # buy everything
 needed_list= ["Apples", "Lettuce", "Bread", "Milk", "Peanut Butter"]
 
+
 got_it = "ice cream"
 while got_it != "done":
     # display list
