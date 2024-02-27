@@ -13,8 +13,13 @@ def double_penny(days, amount=0.01):
     else:
         return double_penny(days - 1, amount * 2)
 
+def main():
+    # Example usage
+    days = int(input("Enter the number of days: "))
+    total_amount = double_penny(days)
+    print(f"Total amount after {days} days: ${total_amount:,.2f}")
 
-# Example usage
-days = int(input("Enter the number of days: "))
-total_amount = double_penny(days)
-print(f"Total amount after {days} days: ${total_amount:,.2f}")
+main()
+
+def factorial(n):
+    return n * factorial(n-1)
