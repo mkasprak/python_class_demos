@@ -1,8 +1,35 @@
 '''
     CRUD practice
+    We are creating a basic Create, Read, Write, Update, Delete program
+    Broken into small functions
 
 '''
+def main_menu():
+    print("Menu:")
+    choice = 0
+    while True:
+        try:
+            print("\nWelcome! You can create new email entries")
+            print("Change email address, delete entries, or display")
+            print("\n")
+            print("1. Create a new entry")
+            print("2. Display an entry by last name")
+            print("3. Update an existing entry.")
+            print("4. Remove an entry.")
+            print("5. Quit")
+            choice = int(input("Please enter the number of your selection:  "))
+            if 0 > choice < 6:
+                print("That is not a valid number. Try again.")
+                main_menu()
+            else:
+                return choice
+        except ValueError:
+                print("That is not a valid number. Try again.")
+                main_menu()
+        
 def check():
+    # Read the contents of the file into a list.
+    # If the file does not exist, create an empty list. 
     try:
         file = open("customer_list.txt", 'r')# does the fle exist?
         lines = file.readlines()
@@ -10,12 +37,16 @@ def check():
         #     print(line) This was for test purposes!
         file.close()
         return lines
-    except:
+    except FileNotFoundError:
         lines = []
         print("Customer list does not exist. I will create a new file ")
         return lines
+    except:
+        lines = []
+        return lines
 
 def create():
+    # create a new customer
     try:
         customer = check()
         fname = input("Please enter the customer\'s first name:  ")
@@ -31,11 +62,14 @@ def create():
     main()
 
 def read():
+    # Display the requested file on screen 
     output = search()
     print(output)
     main()
 
 def update():
+    # update a record
+
     try:
         output, index_nbr= search()
         entry = output.split(", ")
@@ -69,6 +103,7 @@ def update():
     main()
 
 def delete():
+    # Delete the selected file
     try:
         customer = check()
         print("We will search for the entry you want to delete. ")
@@ -117,20 +152,8 @@ def save(output):
 
 def main():
     # present menu and call appropriate functions
-    print("\nWelcome! You can create new email entries")
-    print("Change email address, delete entries, or display")
-    print("\n")
-    print("1. Create a new entry")
-    print("2. Display an entry by last name")
-    print("3. Update an existing entry.")
-    print("4. Remove an entry.")
-    print("5. Quit")
-    
+    choice = main_menu()
     try:
-        choice = int(input("Please enter the number of your selection:  "))
-        if choice < 1 or choice > 5:
-            print("That is not a valid choice.")
-            main()
         if choice == 1:
             create()
         elif choice == 2:
