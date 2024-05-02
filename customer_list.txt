@@ -1,7 +1,8 @@
-Meri, Kasprak, 815-575-1235, meri@gmail.com
 zippy, duck, 815-555-1235, zippy@duck.com
 Devin, Grishgow, 555555, dg@gmail.com
 Donald, Duck, 555-135-2222, donald@duck.com
 Mickey, Mouse, 815-555-5555, mickey@mouse.com
 Daffy, Daisy, 1111111, daffy@duck.com
 
+
+Meri, Kasprak, 815-575-1235, meredith@gmail.com

@@ -1,17 +1,46 @@
+import math
+import random
+
+def main():
+
+    try:
+
+        
+
+        user_input = int(input("Please guess a number between 1 and 100: "))
+
+        randomnum = random.randrange(0,100) #Random number generated between 0 and 100
+        
+        inputdif = abs(user_input - randomnum) #Get the difference between the user's input and the chosen number
+
+        while user_input != randomnum: #Keep looping until the user gets the number that the program is thinking of
+
+            if inputdif <= 5 and inputdif < 15: #If the distance is between these values, tell the user how close they are.
+                print("Very Hot")
+                user_input = int(input("Please guess a number between 1 and 100: "))
+                inputdif = abs(user_input - randomnum)
+            if inputdif > 5 and inputdif <= 15:
+                print("Hot")
+                user_input = int(input("Please guess a number between 1 and 100: "))
+                inputdif = abs(user_input - randomnum)
+            if inputdif > 15 and inputdif <= 25:
+                print("Cool")
+                user_input = int(input("Please guess a number between 1 and 100: "))
+                inputdif = abs(user_input - randomnum)
+            if inputdif > 25:
+                print("Cold")
+                user_input = int(input("Please guess a number between 1 and 100: "))
+                inputdif = abs(user_input - randomnum)
+
+        print(f"You got it! The number was {randomnum}")
+
+    except ValueError: #Catch invalid user input
+        print("That is not a valid number.")
+        main()
 
 
-#Creating a main function so i can call it later 
-def main(): 
-    #making a list for all the information that I need 
-    nato_alphabet = {"A":"Alpha", "B":"Bravo", "C":"Charlie", "D":"Delta", "E":"Echo", "F":"Foxtrot", "G":"Golf", "H":"Hotel", "I":"India", "J":"Juliette", "K":"Kilo", "L":"Lima", 
-                     "M":"Mike", "N":"November", "O":"Oscar", "P":"Papa", "Q":"Quebec", "R":"Romeo", "S":"Sierra","T":"Tango","U":"Uniform","V":"Victor","W":"Whiskey",
-                     "X":"X-Ray","Y":"Yankee","Z":"Zulu"}
-    #Printing out the names so the user can pick one from this list
-    print(nato_alphabet)
-    #Asking the user to type a name form one that is inside the list 
-    quest = input("Enter a word from the the nato alphabet list please: ")
 
-    for i in quest: 
-        print(quest)
-#Calling the list so it can work 
+
+
+
 main()
